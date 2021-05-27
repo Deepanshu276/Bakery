@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{%block title %}
+<title>Price</title>
+{%endblock title%}
+{% block content %}
+
+</br></br></br></br>
+<style>
+ .container {
+  position: relative;
+  text-align: center;
+  color: black;
+}
+  .centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+</style>
+
+<div class="container">
+         <img src="{% static 'images/image1.jpeg' %}" alt="cake" class="img-fluid" height="1200px", width="800">
+    <form method="POST" class="centered">
+        {% csrf_token %}
+        <input type="number" class="form-control" name="quantity" maxlength="7" size="7" placeholder="Add your order!!!!">
+        </br></br>
+        <button type="submit" class="btn btn-primary">Place your Order!!!</button>
+    </form>
+</div>
+{% endblock content %}
+
